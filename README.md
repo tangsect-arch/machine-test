@@ -1,8 +1,5 @@
-Api details
-
 create a mysql scheme called userdb in locally
 run 'npm install' inorder to install necessary packages
-run 'node server.js' to run the project
 api details
     get-> 
         http://localhost:8080/api/v1/users/ -> all user data
