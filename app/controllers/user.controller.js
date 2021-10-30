@@ -55,7 +55,7 @@ exports.create = (req, res) => {
     });
 };
 
-// Retrieve all Tutorials from the database.
+// Retrieve all User from the database.
 exports.findAll = (req, res) => {
     const first_name = req.query.first_name;
     let condition = first_name ? { first_name: { [Op.like]: `%${first_name}%` } } : null;
@@ -143,14 +143,14 @@ exports.delete = (req, res) => {
     });
 };
 
-// Delete all Tutorials from the database.
+// Delete all Users from the database.
 exports.deleteAll = (req, res) => {
   User.destroy({
     where: {},
     truncate: false
   })
     .then(nums => {
-      res.send({ message: `${nums} Tutorials were deleted successfully!` });
+      res.send({ message: `${nums} user were deleted successfully!` });
     })
     .catch(err => {
       res.status(500).send({
