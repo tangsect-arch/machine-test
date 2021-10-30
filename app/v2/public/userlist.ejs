@@ -7,6 +7,7 @@
 
 <body>
     <a href="http://localhost:5000/">Add user</a>
+    <!-- <a href="http://localhost:5000/api/v2/users/" method="DELETE">Delete All</a> -->
 <div class="row">
     <%if (results.length === 0) { %>
         <h1>No user found</h1>
@@ -34,7 +35,7 @@
               <td><%=results[i].last_name%></td>
               <td><%=results[i].email%></td>
               <td>
-                <a href="http://localhost:5000/api/v2/users/<%=results[i].id%>">edit</a>
+                   <a href="http://localhost:5000/api/v2/users/<%=results[i].id%>">view details</a>                
               </td>
             </tr>
             

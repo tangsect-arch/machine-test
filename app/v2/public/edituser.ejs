@@ -7,26 +7,9 @@
 
 <body>
     <a href="http://localhost:5000/">Add user</a>
-<div class="row">
-    
-    <%=results%>  
-    <script>
-        
-        console.log("bbbbbbbbbbbbbbbbbbbb",results.last_name )
-        // window.onload = function(){
-        //     document.getElementById("first_name").value = results.last_name;
-        //     document.getElementById("last_name").value = "value";
-        //     document.getElementById("email").value = "value";
-        //     document.getElementById("mobile").value = "value";
-        //     document.getElementById("age").value = "value";
-        //     document.getElementById("introduction").value = "value";
-        //     document.getElementById("experience").value = "value";
-        //     document.getElementById("achievement").value = "value";
-        
-        // };
-    </script>   
+<div class="row">  
         <a href="http://localhost:5000/api/v2/users/">list users</a>
-        <form action="http://localhost:5000/api/v2/users/" method="PUT">
+        <!-- <form action="http://localhost:5000/api/v2/users/" method="PUT"> -->
             <ul>                
                 <li> <input type="text" class="form-control" placeholder="First Name" id="first_name" name="first_name" value="<%-results.first_name%>"></li>
                 <li> <input type="text" class="form-control" placeholder="Last Name" id="last_name" name="last_name" value="<%-results.last_name%>"></li>
@@ -36,10 +19,10 @@
                 <li> <input type="text" class="form-control" placeholder="Introduction" id="introduction" name="introduction" value="<%-results.introduction%>"></li>
                 <li> <input type="text" class="form-control" placeholder="Experience" id="experience" name="experience" value="<%-results.experience%>"></li>
                 <li> <input type="text" class="form-control" placeholder="achievement" id="achievement" name="achievement" value="<%-results.achievement%>"></li>
-                <input  type="submit" class="btn btn-primary btn-lg btn-block" value="Save" /> 	
+                <!-- <input  type="submit" class="btn btn-primary btn-lg btn-block" value="Save" /> 	 -->
             </ul>    
             
-        </form>	
+        <!-- </form>	 -->
             
           
 </div>
