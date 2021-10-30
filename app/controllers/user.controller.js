@@ -11,6 +11,12 @@ exports.create = (req, res) => {
     });
     return;
   }
+  else if (!req.body.last_name) {
+    res.status(400).send({
+      message: "Last name required!"
+    });
+    return;
+  }
   else if (!req.body.email) {
     res.status(400).send({
       message: "Email id required!"
@@ -51,11 +57,10 @@ exports.create = (req, res) => {
 
 // Retrieve all Tutorials from the database.
 exports.findAll = (req, res) => {
-    console.log("usereeeeeeeeeeeeeee")
     const first_name = req.query.first_name;
-    var condition = first_name ? { first_name: { [Op.like]: `%${first_name}%` } } : null;
+    let condition = first_name ? { first_name: { [Op.like]: `%${first_name}%` } } : null;
 
-  User.findAll({ where: condition })
+  User.findAll({attributes: ['first_name', 'last_name', 'email']})
     .then(data => {
       res.send(data);
     })

@@ -5,7 +5,8 @@ module.exports = (sequelize, Sequelize) => {
         allowNull: false
       },
       last_name: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
+        allowNull: false
       },
       email: {
         type: Sequelize.STRING,
