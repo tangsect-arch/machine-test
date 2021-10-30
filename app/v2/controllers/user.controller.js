@@ -47,11 +47,11 @@ exports.create = (req, res) => {
   User.create(user)
     .then(data => {
       console.log()
-      res.status(200).sendFile('index.html', { root: './app/public' });
+      res.status(200).sendFile('index.html', { root: './app/v2/public' });
       //res.send(data);
     })
     .catch(err => {
-      res.status(500).sendFile('index.html', { root: './app/public' }).send({
+      res.status(500).sendFile('index.html', { root: './app/v2/public' }).send({
           message:
           err.message || "Some error occurred while creating the User."
       });

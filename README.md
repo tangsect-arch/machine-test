@@ -1,5 +1,8 @@
+for api set
+
 create a mysql scheme called userdb in locally
 run 'npm install' inorder to install necessary packages
+run 'node server'
 api details
     get-> 
         http://localhost:8080/api/v1/users/ -> all user data
@@ -34,3 +37,14 @@ api details
     delete
         http://localhost:8080/api/v1/users/ -> delete all users
         http://localhost:8080/api/v1/users/:id -> delete user by id
+
+
+for view set
+
+for api set
+
+create a mysql scheme called userdata in locally
+run 'npm install' inorder to install necessary packages
+run 'node index'
+
+goto 'http://localhost:5000'

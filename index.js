@@ -16,7 +16,7 @@ app.get('/', function (req, res) {
 require("./app/v2/routes/user.routes")(app);
 
 // set port, listen for requests
-const PORT =  8080;
+const PORT =  5000;
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}.`);
 });

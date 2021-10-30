@@ -12,23 +12,12 @@
     <%=results%>  
     <script>
         
-        console.log("bbbbbbbbbbbbbbbbbbbb",results.last_name )
-        // window.onload = function(){
-        //     document.getElementById("first_name").value = results.last_name;
-        //     document.getElementById("last_name").value = "value";
-        //     document.getElementById("email").value = "value";
-        //     document.getElementById("mobile").value = "value";
-        //     document.getElementById("age").value = "value";
-        //     document.getElementById("introduction").value = "value";
-        //     document.getElementById("experience").value = "value";
-        //     document.getElementById("achievement").value = "value";
         
-        // };
     </script>   
         <a href="http://localhost:8080/api/v1/users/">list users</a>
         <form action="http://localhost:8080/api/v1/users/" method="PUT">
             <ul>                
-                <li> <input type="text" class="form-control" placeholder="First Name" id="first_name" name="first_name" value="<%-results.first_name%>"></li>
+                <li> <input type="text" class="form-control" placeholder="First Name" id="first_name" name="first_name" value="<%-results.first_name%>" 0nchange=change()></li>
                 <li> <input type="text" class="form-control" placeholder="Last Name" id="last_name" name="last_name" value="<%-results.last_name%>"></li>
                 <li> <input type="text" class="form-control" placeholder="Email" id="email" name="email" value="<%-results.email%>"></li>
                 <li> <input type="text" class="form-control" placeholder="Mobile" id="mobile" name="mobile" value="<%-results.mobile%>"></li>
