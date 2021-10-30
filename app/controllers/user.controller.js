@@ -1,4 +1,5 @@
 const db = require("../models");
+const { dirname } = require ( 'path' );
 const User = db.users;
 const Op = db.Sequelize.Op;
 
@@ -45,11 +46,13 @@ exports.create = (req, res) => {
   // Save User in the database
   User.create(user)
     .then(data => {
-      res.send(data);
+      console.log()
+      res.status(200).sendFile('index.html', { root: './app/public' });
+      //res.send(data);
     })
     .catch(err => {
-      res.status(500).send({
-        message:
+      res.status(500).sendFile('index.html', { root: './app/public' }).send({
+          message:
           err.message || "Some error occurred while creating the User."
       });
     });
@@ -57,12 +60,11 @@ exports.create = (req, res) => {
 
 // Retrieve all User from the database.
 exports.findAll = (req, res) => {
-    const first_name = req.query.first_name;
-    let condition = first_name ? { first_name: { [Op.like]: `%${first_name}%` } } : null;
-
-  User.findAll({attributes: ['first_name', 'last_name', 'email']})
+    
+  User.findAll({attributes: ['id', 'first_name', 'last_name', 'email']})
     .then(data => {
-      res.send(data);
+      res.render(__dirname+"/../public/userlist.ejs",{title:'user list',results:data});
+      //res.send(data);
     })
     .catch(err => {
       res.status(500).send({
@@ -79,7 +81,9 @@ exports.findOne = (req, res) => {
   User.findByPk(id)
     .then(data => {
       if (data) {
-        res.send(data);
+        console.log("data ",data)
+        res.render(__dirname+"/../public/edituser.ejs",{title:'edit users',results:data});
+        //res.send(data);
       } else {
         res.status(404).send({
           message: `Cannot find User with id=${id}.`
